@@ -3,11 +3,25 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $comment = $_POST["comment"];
-  echo "<div>Comment: $comment</div>";
+  echo "<div class='comment-box'>Comment: $comment</div>";
 }
 ?>
 
-<form method="POST" action="comment.php">
-  Comment: <textarea name="comment"></textarea>
-  <button type="submit">Post Comment</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment - WebVuln</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="comment-container">
+    <h1>Post a Comment</h1>
+    <form method="POST" action="comment.php">
+      <textarea name="comment" placeholder="Enter your comment here..." required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>
+</body>
+</html>
