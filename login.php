@@ -21,15 +21,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
-    echo "Login successful!";
+    echo "<div class='success'>Login successful!</div>";
   } else {
-    echo "Invalid credentials!";
+    echo "<div class='error'>Invalid credentials!</div>";
   }
 }
 ?>
 
-<form method="POST" action="login.php">
-  Username: <input type="text" name="username">
-  Password: <input type="password" name="password">
-  <button type="submit">Login</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - WebVuln</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login to WebVuln</h1>
+    <form method="POST" action="login.php">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>
