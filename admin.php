@@ -7,7 +7,7 @@ if ($_SESSION["admin"] != "true") {
   die("Access denied!");
 }
 
-echo "Welcome Admin!";
+echo "<div class='admin-welcome'>Welcome Admin!</div>";
 ?>
 
-<a href="logout.php">Logout</a>
+<a href="logout.php" class="logout-btn">Logout</a>
